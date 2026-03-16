@@ -1,41 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>bnwraptor - Market Analysis</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
-    h1 a { text-decoration: none; color: #333; }
-    main { margin: 40px 0; }
-    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px; }
-    .post { margin: 30px 0; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
-    .post-date { color: #666; font-size: 14px; }
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --accent: #0066cc;
+      --card-bg: #f8f9fa;
+      --border: #e1e4e8;
+      --muted: #6a737d;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --muted: #8b949e;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0d1117;
+        --text: #c9d1d9;
+        --accent: #58a6ff;
+        --card-bg: #161b22;
+        --border: #30363d;
+        --muted: #8b949e;
+      }
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    header h1 a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .post {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .post:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    }
+
+    [data-theme="dark"] .post:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    .post h3 {
+      margin-bottom: 8px;
+    }
+
+    .post h3 a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .post h3 a:hover {
+      color: var(--accent);
+    }
+
+    .post-date {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+    }
+
+    .post-content {
+      color: var(--text);
+    }
+
+    .post-content p {
+      margin-bottom: 12px;
+    }
+
+    .post-content strong {
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 15px; }
+      .post { padding: 16px; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1><a href="/bnwraptor-blog/">bnwraptor</a></h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
   </header>
+
   <main>
-    <h2>Latest Posts</h2>
-    
     <div class="post">
       <h3>Oil Market Analysis - March 15 2026</h3>
       <p class="post-date">March 15, 2026</p>
-      <p>Current: Brent $103.82 | WTI $99.30</p>
-      <p><strong>What's driving this:</strong><br>
+      <div class="post-content">
+        <p><strong>Current:</strong> Brent $103.82 | WTI $99.30</p>
+        <p><strong>What's driving this:</strong><br>
 US-Iran war escalation pushed oil up ~20% this week. Strait of Hormuz is the big one — about 20% of global oil passes through there.</p>
-      <p><strong>How markets could react tonight (6PM EST open):</strong></p>
-      <p>Peace talks or de-escalation? Brace for a pullback. $90-$95 on Brent is realistic.<br>
-More attacks or Strait disruption? $110+ comes quick. That's the tail risk.<br>
-Nothing changes? Expect choppy action between $100-$105.</p>
-      <p><strong>Bottom line:</strong><br>
+        <p><strong>How markets could react tonight (6PM EST open):</strong></p>
+        <p>Peace talks or de-escalation? Brace for a pullback. $90-$95 on Brent is realistic.</p>
+        <p>More attacks or Strait disruption? $110+ comes quick. That's the tail risk.</p>
+        <p>Nothing changes? Expect choppy action between $100-$105.</p>
+        <p><strong>Bottom line:</strong><br>
 The market's pricing in conflict, not peace. Any de-escalation triggers a sell-off. Any escalation triggers more gains.</p>
-      <p>Check headlines before the 6PM bell. That's your wildcard.</p>
+        <p>Check headlines before the 6PM bell. That's your wildcard.</p>
+      </div>
     </div>
   </main>
+
   <footer>
     <p>&copy; 2026 bnwraptor</p>
   </footer>
+
+  <script>
+    const themeToggle = document.querySelector('.theme-toggle');
+    const html = document.documentElement;
+    
+    // Check saved preference or system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      html.setAttribute('data-theme', savedTheme);
+      updateButton(savedTheme);
+    }
+
+    function toggleTheme() {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      if (newTheme === 'light') {
+        html.removeAttribute('data-theme');
+      } else {
+        html.setAttribute('data-theme', newTheme);
+      }
+      
+      localStorage.setItem('theme', newTheme);
+      updateButton(newTheme);
+    }
+
+    function updateButton(theme) {
+      themeToggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
+    }
+  </script>
 </body>
 </html>
