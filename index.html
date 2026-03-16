@@ -158,16 +158,26 @@
     const themeToggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
     
-    // Check saved preference or system preference
+    // Check saved preference first, then fall back to system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       html.setAttribute('data-theme', savedTheme);
       updateButton(savedTheme);
+    } else {
+      // No saved preference - use system preference
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (prefersDark) {
+        html.setAttribute('data-theme', 'dark');
+        updateButton('dark');
+      } else {
+        updateButton('light');
+      }
     }
 
     function toggleTheme() {
       const currentTheme = html.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      const isDark = currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const newTheme = isDark ? 'light' : 'dark';
       
       if (newTheme === 'light') {
         html.removeAttribute('data-theme');
