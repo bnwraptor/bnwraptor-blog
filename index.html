@@ -141,24 +141,25 @@
 
   <footer>
     <p>&copy; 2026 bnwraptor</p>
+    <p style="margin-top: 10px; font-size: 0.8rem;"><a href="#" onclick="resetTheme(); return false;" style="color: var(--muted);">Reset to system theme</a></p>
   </footer>
 
   <script>
     const themeToggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
     
-    // Determine initial theme: saved preference > system preference > light (default)
-    function getInitialTheme() {
-      const saved = localStorage.getItem('theme');
-      if (saved) return saved;
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
+    // Detect system preference
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    const initialTheme = getInitialTheme();
-    if (initialTheme === 'dark') {
+    // Determine initial theme: saved preference OR system preference
+    const saved = localStorage.getItem('theme');
+    let theme = saved ? saved : (prefersDark ? 'dark' : 'light');
+    
+    // Apply theme
+    if (theme === 'dark') {
       html.setAttribute('data-theme', 'dark');
     }
-    updateButton(initialTheme);
+    updateButton(theme);
 
     function toggleTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
@@ -171,6 +172,18 @@
       }
       
       localStorage.setItem('theme', newTheme);
+      updateButton(newTheme);
+    }
+
+    function resetTheme() {
+      localStorage.removeItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const newTheme = prefersDark ? 'dark' : 'light';
+      if (newTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+      } else {
+        html.removeAttribute('data-theme');
+      }
       updateButton(newTheme);
     }
 
