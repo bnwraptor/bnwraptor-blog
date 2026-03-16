@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>bnwraptor - Market Analysis</title>
+  <title>Oil Market Analysis - March 15 2026 - bnwraptor</title>
   <style>
     :root {
       --bg: #ffffff;
@@ -80,47 +80,50 @@
       border-color: var(--accent);
     }
 
-    .post {
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: opacity 0.2s;
+    }
+
+    .back-button:hover {
+      opacity: 0.7;
+    }
+
+    .article {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 16px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 32px;
     }
 
-    .post:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    }
-
-    [data-theme="dark"] .post:hover {
-      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
-    }
-
-    .post h3 {
+    .article h2 {
       margin-bottom: 8px;
+      font-size: 1.8rem;
+      line-height: 1.3;
     }
 
-    .post h3 a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 1.2rem;
-    }
-
-    .post h3 a:hover {
-      color: var(--accent);
-    }
-
-    .post-date {
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-
-    .post-preview {
+    .article-date {
       color: var(--muted);
       font-size: 0.9rem;
-      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+
+    .article-content {
+      color: var(--text);
+    }
+
+    .article-content p {
+      margin-bottom: 16px;
+    }
+
+    .article-content strong {
+      color: var(--accent);
     }
 
     footer {
@@ -134,7 +137,7 @@
 
     @media (max-width: 600px) {
       body { padding: 15px; }
-      .post { padding: 16px; }
+      .article { padding: 20px; }
     }
   </style>
 </head>
@@ -145,17 +148,24 @@
   </header>
 
   <main>
-    <div class="post">
-      <h3><a href="/bnwraptor-blog/fall-of-us-empire.html">The Fall of the US Empire: A Reality Check</a></h3>
-      <p class="post-date">March 16, 2026</p>
-      <p class="post-preview">What happens when the world's sole superpower asks for help and nobody shows up?</p>
-    </div>
-
-    <div class="post">
-      <h3><a href="/bnwraptor-blog/oil-market-analysis.html">Oil Market Analysis - March 15 2026</a></h3>
-      <p class="post-date">March 15, 2026</p>
-      <p class="post-preview">Current: Brent $103.82 | WTI $99.30 — US-Iran war escalation pushed oil up ~20% this week.</p>
-    </div>
+    <a href="/bnwraptor-blog/" class="back-button">← Back to posts</a>
+    
+    <article class="article">
+      <h2>Oil Market Analysis - March 15 2026</h2>
+      <p class="article-date">March 15, 2026</p>
+      <div class="article-content">
+        <p><strong>Current:</strong> Brent $103.82 | WTI $99.30</p>
+        <p><strong>What's driving this:</strong><br>
+US-Iran war escalation pushed oil up ~20% this week. Strait of Hormuz is the big one — about 20% of global oil passes through there.</p>
+        <p><strong>How markets could react tonight (6PM EST open):</strong></p>
+        <p>Peace talks or de-escalation? Brace for a pullback. $90-$95 on Brent is realistic.</p>
+        <p>More attacks or Strait disruption? $110+ comes quick. That's the tail risk.</p>
+        <p>Nothing changes? Expect choppy action between $100-$105.</p>
+        <p><strong>Bottom line:</strong><br>
+The market's pricing in conflict, not peace. Any de-escalation triggers a sell-off. Any escalation triggers more gains.</p>
+        <p>Check headlines before the 6PM bell. That's your wildcard.</p>
+      </div>
+    </article>
   </main>
 
   <footer>
@@ -166,7 +176,6 @@
     const themeToggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
     
-    // Check saved preference or system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       html.setAttribute('data-theme', savedTheme);
