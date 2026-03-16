@@ -23,17 +23,6 @@
       --muted: #8b949e;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root:not([data-theme="light"]) {
-        --bg: #0d1117;
-        --text: #c9d1d9;
-        --accent: #58a6ff;
-        --card-bg: #161b22;
-        --border: #30363d;
-        --muted: #8b949e;
-      }
-    }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
@@ -194,30 +183,26 @@
     const themeToggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
     
-    // Check saved preference first, then fall back to system preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-      html.setAttribute('data-theme', savedTheme);
-      updateButton(savedTheme);
-    } else {
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (prefersDark) {
-        html.setAttribute('data-theme', 'dark');
-        updateButton('dark');
-      } else {
-        updateButton('light');
-      }
+    function getInitialTheme() {
+      const saved = localStorage.getItem('theme');
+      if (saved) return saved;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
+    
+    const initialTheme = getInitialTheme();
+    if (initialTheme === 'dark') {
+      html.setAttribute('data-theme', 'dark');
+    }
+    updateButton(initialTheme);
 
     function toggleTheme() {
-      const currentTheme = html.getAttribute('data-theme');
-      const isDark = currentTheme === 'dark' || (!currentTheme && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      const isDark = html.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
       
-      if (newTheme === 'light') {
-        html.removeAttribute('data-theme');
+      if (newTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
       } else {
-        html.setAttribute('data-theme', newTheme);
+        html.removeAttribute('data-theme');
       }
       
       localStorage.setItem('theme', newTheme);
