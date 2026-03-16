@@ -1,17 +1,41 @@
----
-layout: default
-title: Welcome
----
-
-<h2>Latest Posts</h2>
-
-<ul>
-{% for post in site.posts %}
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-    - {{ post.date | date: "%B %d, %Y" }}
-  </li>
-{% endfor %}
-</ul>
-
-<p>Welcome. Check back for market analysis and thoughts.</p>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>bnwraptor - Market Analysis</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
+    h1 a { text-decoration: none; color: #333; }
+    main { margin: 40px 0; }
+    footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #666; font-size: 14px; }
+    .post { margin: 30px 0; padding: 20px; border: 1px solid #eee; border-radius: 8px; }
+    .post-date { color: #666; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/bnwraptor-blog/">bnwraptor</a></h1>
+  </header>
+  <main>
+    <h2>Latest Posts</h2>
+    
+    <div class="post">
+      <h3>Oil Market Analysis - March 15 2026</h3>
+      <p class="post-date">March 15, 2026</p>
+      <p>Current: Brent $103.82 | WTI $99.30</p>
+      <p><strong>What's driving this:</strong><br>
+US-Iran war escalation pushed oil up ~20% this week. Strait of Hormuz is the big one — about 20% of global oil passes through there.</p>
+      <p><strong>How markets could react tonight (6PM EST open):</strong></p>
+      <p>Peace talks or de-escalation? Brace for a pullback. $90-$95 on Brent is realistic.<br>
+More attacks or Strait disruption? $110+ comes quick. That's the tail risk.<br>
+Nothing changes? Expect choppy action between $100-$105.</p>
+      <p><strong>Bottom line:</strong><br>
+The market's pricing in conflict, not peace. Any de-escalation triggers a sell-off. Any escalation triggers more gains.</p>
+      <p>Check headlines before the 6PM bell. That's your wildcard.</p>
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2026 bnwraptor</p>
+  </footer>
+</body>
+</html>
