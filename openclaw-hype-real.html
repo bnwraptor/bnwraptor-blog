@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="/bnwraptor-blog/favicon.ico">
+  <link rel="icon" href="/bnwraptor-blog/favicon-black.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Is the OpenClaw Hype Real? - bnwraptor</title>
   <style>
@@ -186,30 +186,33 @@
     const themeToggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
     
-    // Detect system preference
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    // Determine initial theme: saved preference OR system preference
     const saved = localStorage.getItem('theme');
     let theme = saved ? saved : (prefersDark ? 'dark' : 'light');
     
-    // Apply theme
     if (theme === 'dark') {
       html.setAttribute('data-theme', 'dark');
     }
+    updateFavicon(theme);
     updateButton(theme);
+
+    function updateFavicon(theme) {
+      const favicon = document.querySelector('link[rel="icon"]');
+      if (favicon) {
+        favicon.href = theme === 'dark' ? '/bnwraptor-blog/favicon-white.png' : '/bnwraptor-blog/favicon-black.png';
+      }
+    }
 
     function toggleTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
-      
       if (newTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
       } else {
         html.removeAttribute('data-theme');
       }
-      
       localStorage.setItem('theme', newTheme);
+      updateFavicon(newTheme);
       updateButton(newTheme);
     }
 
@@ -222,6 +225,7 @@
       } else {
         html.removeAttribute('data-theme');
       }
+      updateFavicon(newTheme);
       updateButton(newTheme);
     }
 
@@ -229,5 +233,5 @@
       themeToggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
   </script>
-</body>
+  </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="/bnwraptor-blog/favicon.ico">
+  <link rel="icon" href="/bnwraptor-blog/favicon-black.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The audacious plot to smuggle Nvidia AI chips to China using dummy servers and a hair dryer - bnwraptor</title>
   <style>
@@ -206,19 +206,26 @@
     if (theme === 'dark') {
       html.setAttribute('data-theme', 'dark');
     }
+    updateFavicon(theme);
     updateButton(theme);
+
+    function updateFavicon(theme) {
+      const favicon = document.querySelector('link[rel="icon"]');
+      if (favicon) {
+        favicon.href = theme === 'dark' ? '/bnwraptor-blog/favicon-white.png' : '/bnwraptor-blog/favicon-black.png';
+      }
+    }
 
     function toggleTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
-      
       if (newTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
       } else {
         html.removeAttribute('data-theme');
       }
-      
       localStorage.setItem('theme', newTheme);
+      updateFavicon(newTheme);
       updateButton(newTheme);
     }
 
@@ -231,6 +238,7 @@
       } else {
         html.removeAttribute('data-theme');
       }
+      updateFavicon(newTheme);
       updateButton(newTheme);
     }
 
@@ -238,5 +246,5 @@
       themeToggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
   </script>
-</body>
+  </body>
 </html>

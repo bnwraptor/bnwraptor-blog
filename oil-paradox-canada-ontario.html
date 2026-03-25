@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <link rel="icon" href="/bnwraptor-blog/favicon.ico">
+  <link rel="icon" href="/bnwraptor-blog/favicon-black.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The Oil Paradox: How Canada Became an Oil Superpower That Can't Fuel Itself - bnwraptor</title>
   <style>
@@ -205,26 +205,45 @@
     const html = document.documentElement;
     
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
     const saved = localStorage.getItem('theme');
     let theme = saved ? saved : (prefersDark ? 'dark' : 'light');
     
     if (theme === 'dark') {
       html.setAttribute('data-theme', 'dark');
     }
+    updateFavicon(theme);
     updateButton(theme);
+
+    function updateFavicon(theme) {
+      const favicon = document.querySelector('link[rel="icon"]');
+      if (favicon) {
+        favicon.href = theme === 'dark' ? '/bnwraptor-blog/favicon-white.png' : '/bnwraptor-blog/favicon-black.png';
+      }
+    }
 
     function toggleTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
-      
       if (newTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
       } else {
         html.removeAttribute('data-theme');
       }
-      
       localStorage.setItem('theme', newTheme);
+      updateFavicon(newTheme);
+      updateButton(newTheme);
+    }
+
+    function resetTheme() {
+      localStorage.removeItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const newTheme = prefersDark ? 'dark' : 'light';
+      if (newTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+      } else {
+        html.removeAttribute('data-theme');
+      }
+      updateFavicon(newTheme);
       updateButton(newTheme);
     }
 
@@ -232,5 +251,5 @@
       themeToggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
   </script>
-</body>
+  </body>
 </html>
