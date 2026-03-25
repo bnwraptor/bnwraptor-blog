@@ -218,20 +218,12 @@
       html.setAttribute('data-theme', 'dark');
     }
     updateFavicon(theme);
-    updateLogo(theme);
     updateButton(theme);
 
     function updateFavicon(theme) {
       const favicon = document.querySelector('link[rel="icon"]');
       if (favicon) {
         favicon.href = theme === 'dark' ? '/bnwraptor-blog/favicon-white.png' : '/bnwraptor-blog/favicon-black.png';
-      }
-    }
-
-    function updateLogo(theme) {
-      const logo = document.getElementById('logo');
-      if (logo) {
-        logo.src = theme === 'dark' ? '/bnwraptor-blog/raptor-white.png' : '/bnwraptor-blog/raptor-black.png';
       }
     }
 
@@ -245,7 +237,6 @@
       }
       localStorage.setItem('theme', newTheme);
       updateFavicon(newTheme);
-      updateLogo(newTheme);
       updateButton(newTheme);
     }
 
@@ -259,7 +250,6 @@
         html.removeAttribute('data-theme');
       }
       updateFavicon(newTheme);
-      updateLogo(newTheme);
       updateButton(newTheme);
     }
 
