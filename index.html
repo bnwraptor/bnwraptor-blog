@@ -204,15 +204,7 @@
     if (theme === 'dark') {
       html.setAttribute('data-theme', 'dark');
     }
-    updateFavicon(theme);
     updateButton(theme);
-
-    function updateFavicon(theme) {
-      const favicon = document.querySelector('link[rel="icon"]');
-      if (favicon) {
-        favicon.href = theme === 'dark' ? '/bnwraptor-blog/favicon-white.png' : '/bnwraptor-blog/favicon-black.png';
-      }
-    }
 
     function toggleTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
@@ -223,7 +215,6 @@
         html.removeAttribute('data-theme');
       }
       localStorage.setItem('theme', newTheme);
-      updateFavicon(newTheme);
       updateButton(newTheme);
     }
 
@@ -236,7 +227,6 @@
       } else {
         html.removeAttribute('data-theme');
       }
-      updateFavicon(newTheme);
       updateButton(newTheme);
     }
 
