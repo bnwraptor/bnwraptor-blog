@@ -132,8 +132,11 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1><a href="/bnwraptor-blog/">bnwraptor</a></h1>
+    <header>
+    <h1>
+      <img id="logo" src="/bnwraptor-blog/raptor-black.png" alt="bnwraptor logo" style="height:40px;vertical-align:middle;margin-right:8px;">
+      <a href="/bnwraptor-blog/">bnwraptor</a>
+    </h1>
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
   </header>
 
@@ -175,12 +178,20 @@ The market's pricing in conflict, not peace. Any de-escalation triggers a sell-o
       html.setAttribute('data-theme', 'dark');
     }
     updateFavicon(theme);
+    updateLogo(theme);
     updateButton(theme);
 
     function updateFavicon(theme) {
       const favicon = document.querySelector('link[rel="icon"]');
       if (favicon) {
         favicon.href = theme === 'dark' ? '/bnwraptor-blog/favicon-white.png' : '/bnwraptor-blog/favicon-black.png';
+      }
+    }
+
+    function updateLogo(theme) {
+      const logo = document.getElementById('logo');
+      if (logo) {
+        logo.src = theme === 'dark' ? '/bnwraptor-blog/raptor-white.png' : '/bnwraptor-blog/raptor-black.png';
       }
     }
 
@@ -194,6 +205,7 @@ The market's pricing in conflict, not peace. Any de-escalation triggers a sell-o
       }
       localStorage.setItem('theme', newTheme);
       updateFavicon(newTheme);
+      updateLogo(newTheme);
       updateButton(newTheme);
     }
 
@@ -207,6 +219,7 @@ The market's pricing in conflict, not peace. Any de-escalation triggers a sell-o
         html.removeAttribute('data-theme');
       }
       updateFavicon(newTheme);
+      updateLogo(newTheme);
       updateButton(newTheme);
     }
 
