@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" href="/favicon-black.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>bnwraptor - Market Analysis</title>
   <style>
@@ -122,54 +123,72 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1><a href="/bnwraptor-blog/">bnwraptor</a></h1>
+    <header>
+    <h1>
+      <img id="logo" src="/raptor-black.png" alt="bnwraptor logo" style="height:40px;width:40px;vertical-align:middle;margin-right:8px;border-radius:50%;object-fit:cover;">
+      <a href="/">bnwraptor</a>
+    </h1>
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
   </header>
 
   <main>
     <div class="post">
-      <h3><a href="/bnwraptor-blog/evtol-air-taxis-2026.html">The Rise of Electric Air Taxis: How eVTOLs Are About to Transform Commercial Travel</a></h3>
+      <h3><a href="/evtol-air-taxis-2026.html">The Rise of Electric Air Taxis: How eVTOLs Are About to Transform Commercial Travel</a></h3>
       <p class="post-date">March 30, 2026</p>
     </div>
 
     <div class="post">
-      <h3><a href="/bnwraptor-blog/denmark-ready-blow-up-airports-stop-american-invasion.html">Denmark Was Ready to Blow Up Its Own Airports to Stop an American Invasion</a></h3>
+      <h3><a href="/x-monetization-geopolitics.html">X's Monetization Mess and the Brutal Reality of Depending on American Platforms</a></h3>
+      <p class="post-date">March 24, 2026</p>
+    </div>
+
+    <div class="post">
+      <h3><a href="/llm-agent-guardrails-probabilistic-workflows.html">When Your AI Agent Goes Rogue: Guardrails for Probabilistic LLM Workflows</a></h3>
       <p class="post-date">March 20, 2026</p>
     </div>
 
     <div class="post">
-      <h3><a href="/bnwraptor-blog/openclaw-hype-real.html">Is the OpenClaw Hype Real? Separating Signal from Noise in the AI Agent Revolution</a></h3>
+      <h3><a href="/nvidia-chip-smuggling.html">The audacious plot to smuggle Nvidia AI chips to China using dummy servers and a hair dryer</a></h3>
+      <p class="post-date">March 20, 2026</p>
+    </div>
+
+    <div class="post">
+      <h3><a href="/denmark-ready-blow-up-airports-stop-american-invasion.html">Denmark Was Ready to Blow Up Its Own Airports to Stop an American Invasion</a></h3>
+      <p class="post-date">March 20, 2026</p>
+    </div>
+
+    <div class="post">
+      <h3><a href="/openclaw-hype-real.html">Is the OpenClaw Hype Real? Separating Signal from Noise in the AI Agent Revolution</a></h3>
       <p class="post-date">March 19, 2026</p>
     </div>
 
     <div class="post">
-      <h3><a href="/bnwraptor-blog/oil-paradox-canada-ontario.html">The Oil Paradox: How Canada Became an Oil Superpower That Can't Fuel Itself</a></h3>
+      <h3><a href="/oil-paradox-canada-ontario.html">The Oil Paradox: How Canada Became an Oil Superpower That Can't Fuel Itself</a></h3>
       <p class="post-date">March 17, 2026</p>
     </div>
 
     <div class="post">
-      <h3><a href="/bnwraptor-blog/end-of-earnings-season.html">The End of Earnings Season: How the SEC's Big Move Could Reshape Global Markets</a></h3>
+      <h3><a href="/end-of-earnings-season.html">The End of Earnings Season: How the SEC's Big Move Could Reshape Global Markets</a></h3>
       <p class="post-date">March 16, 2026</p>
     </div>
 
     <div class="post">
-      <h3><a href="/bnwraptor-blog/ontario-housing-crisis.html">Ontario's Housing Crisis: A Perfect Storm Decades in the Making</a></h3>
+      <h3><a href="/ontario-housing-crisis.html">Ontario's Housing Crisis: A Perfect Storm Decades in the Making</a></h3>
       <p class="post-date">March 16, 2026</p>
     </div>
 
     <div class="post">
-      <h3><a href="/bnwraptor-blog/reversing-the-trend-canada-entrepreneurs.html">Reversing the Trend: What Canada Needs to Keep Entrepreneurs at Home</a></h3>
+      <h3><a href="/reversing-the-trend-canada-entrepreneurs.html">Reversing the Trend: What Canada Needs to Keep Entrepreneurs at Home</a></h3>
       <p class="post-date">March 16, 2026</p>
     </div>
 
     <div class="post">
-      <h3><a href="/bnwraptor-blog/fall-of-us-empire.html">The Fall of the US Empire: A Reality Check</a></h3>
+      <h3><a href="/fall-of-us-empire.html">The Fall of the US Empire: A Reality Check</a></h3>
       <p class="post-date">March 16, 2026</p>
     </div>
 
     <div class="post">
-      <h3><a href="/bnwraptor-blog/oil-market-analysis.html">Oil Market Analysis - March 15 2026</a></h3>
+      <h3><a href="/oil-market-analysis.html">Oil Market Analysis - March 15 2026</a></h3>
       <p class="post-date">March 15, 2026</p>
     </div>
   </main>
@@ -183,14 +202,10 @@
     const themeToggle = document.querySelector('.theme-toggle');
     const html = document.documentElement;
     
-    // Detect system preference
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
-    // Determine initial theme: saved preference OR system preference
     const saved = localStorage.getItem('theme');
     let theme = saved ? saved : (prefersDark ? 'dark' : 'light');
     
-    // Apply theme
     if (theme === 'dark') {
       html.setAttribute('data-theme', 'dark');
     }
@@ -199,13 +214,11 @@
     function toggleTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
-      
       if (newTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
       } else {
         html.removeAttribute('data-theme');
       }
-      
       localStorage.setItem('theme', newTheme);
       updateButton(newTheme);
     }
@@ -226,5 +239,5 @@
       themeToggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
   </script>
-</body>
+  </body>
 </html>
