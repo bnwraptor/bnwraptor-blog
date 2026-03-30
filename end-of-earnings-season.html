@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" href="/favicon-black.png">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The End of Earnings Season: How the SEC's Big Move Could Reshape Global Markets - bnwraptor</title>
   <style>
@@ -137,13 +138,16 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1><a href="/bnwraptor-blog/">bnwraptor</a></h1>
+    <header>
+    <h1>
+      <img id="logo" src="/raptor-black.png" alt="bnwraptor logo" style="height:40px;width:40px;vertical-align:middle;margin-right:8px;border-radius:50%;object-fit:cover;">
+      <a href="/">bnwraptor</a>
+    </h1>
     <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
   </header>
 
   <main>
-    <a href="/bnwraptor-blog/" class="back-button">← Back to posts</a>
+    <a href="/" class="back-button">← Back to posts</a>
     
     <article class="article">
       <h2>The End of Earnings Season: How the SEC's Big Move Could Reshape Global Markets</h2>
@@ -195,7 +199,6 @@
     const html = document.documentElement;
     
     const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
     const saved = localStorage.getItem('theme');
     let theme = saved ? saved : (prefersDark ? 'dark' : 'light');
     
@@ -207,14 +210,24 @@
     function toggleTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
       const newTheme = isDark ? 'light' : 'dark';
-      
       if (newTheme === 'dark') {
         html.setAttribute('data-theme', 'dark');
       } else {
         html.removeAttribute('data-theme');
       }
-      
       localStorage.setItem('theme', newTheme);
+      updateButton(newTheme);
+    }
+
+    function resetTheme() {
+      localStorage.removeItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const newTheme = prefersDark ? 'dark' : 'light';
+      if (newTheme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+      } else {
+        html.removeAttribute('data-theme');
+      }
       updateButton(newTheme);
     }
 
@@ -222,5 +235,5 @@
       themeToggle.textContent = theme === 'dark' ? '☀️ Light' : '🌙 Dark';
     }
   </script>
-</body>
+  </body>
 </html>
