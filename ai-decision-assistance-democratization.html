@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="/favicon-black.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The New AI Dividing Line: Not What It Can Do, But What It Helps You Decide - bnwraptor</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --accent: #0066cc;
+      --card-bg: #f8f9fa;
+      --border: #e1e4e8;
+      --muted: #6a737d;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --muted: #8b949e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    header h1 a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+
+    .theme-toggle:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: opacity 0.2s;
+    }
+
+    .back-button:hover {
+      opacity: 0.7;
+    }
+
+    .article {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+
+    .article h2 {
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+
+    .article-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+
+    .article-content {
+      color: var(--text);
+    }
+
+    .article-content p {
+      margin-bottom: 16px;
+    }
+
+    .article-content strong {
+      color: var(--accent);
+    }
+
+    .article-content h3 {
+      margin-top: 28px;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 15px; }
+      .article { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+    <header>
+    <h1>
+      <img id="logo" src="/raptor-black.png" alt="bnwraptor logo" style="height:40px;width:40px;vertical-align:middle;margin-right:8px;border-radius:50%;object-fit:cover;">
+      <a href="/">bnwraptor</a>
+    </h1>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+  </header>
+
+  <main>
+    <a href="/" class="back-button">← Back to posts</a>
+    
+    <article class="article">
+      <h2>The New AI Dividing Line: Not What It Can Do, But What It Helps You Decide</h2>
+      <p class="article-date">April 8, 2026</p>
+      <div class="article-content">
+        <p>For decades, the barrier between "I have an idea" and "I shipped a product" was expertise. Not capital, not connections, but knowledge you accumulated over years. You had to know how to find suppliers, how to negotiate with factories, how to read market signals. That expertise lived in the heads of people who'd done it for years, and it took months to transfer.</p>
+
+        <p>AI is changing that. Not in the way chatbots replaced customer service reps, or image generators replaced illustrators. The more interesting shift is quieter: AI is becoming a decision-making assistant for people who never had access to the information that experts had.</p>
+
+        <p>The story that got my attention this week came from MIT Technology Review. A small business owner named Mike McClary used an AI tool on Alibaba.com called Accio to revamp his Guardian flashlight. He fed it his old product specs, production costs, profit margins. The tool suggested making it smaller, switching to battery power, finding a new manufacturer. It identified a factory in Ningbo, China that could cut his cost from $17 per unit to $2.50.</p>
+
+        <p>That reframe didn't require McClary to spend months learning how factory sourcing worked. It didn't require him to have a network in Ningbo. He described his product, and the system found the gap.</p>
+
+        <p>Accio launched in 2024. It now has 10 million monthly active users. One in five people browsing Alibaba.com uses it to research product decisions. This isn't a niche tool. It's mainstream.</p>
+
+        <h3>The Shift That Actually Matters</h3>
+
+        <p>What's happening here isn't automation in the traditional sense. McClary's flashlight didn't get manufactured by robots. The factory still exists in Ningbo. Human workers still assemble the parts. The change is that the decision about whether to make the product, and how to make it cheaper, used to require specialized knowledge that took years to accumulate. Now it requires a conversation.</p>
+
+        <p>This is a different kind of AI disruption than the ones that make headlines. When people talk about AI replacing jobs, they usually mean tasks: image generation, transcription, first-draft writing. Those are visible and measurable. The sourcing problem is different. It's not about replacing a worker. It's about making the decision to even attempt something accessible to someone who wouldn't have known where to start.</p>
+
+        <p>The same pattern is showing up across industries. A restaurant owner who couldn't afford a consultant can get market positioning analysis. A first-time product designer can get manufacturing feedback in minutes instead of months. A content creator can get distribution strategy insights without paying for a course.</p>
+
+        <p>None of these replace expertise. McClary still had to contact the supplier, negotiate terms, manage the logistics. The AI didn't ship the product. But it lowered the activation energy required to try.</p>
+
+        <h3>Why This Is Different From Previous Tech Hype</h3>
+
+        <p>Every few years, a technology promises to democratize expertise. The promise usually fails because the technology still requires the user to know what they're doing. SEO tools tell you your content ranking is low, but you still need to know what SEO means. E-commerce platforms let you list products, but you still need to know what to make and how to price it.</p>
+
+        <p>The Alibaba sourcing case works differently because the AI is embedded in a system that already has the domain knowledge built in. Accio has 26 years of Alibaba transaction data. It knows which factories have what capacity, which suppliers have good track records, what price ranges are realistic for different production runs. The knowledge isn't in the user's head. It's in the model's training data and the platform's proprietary database.</p>
+
+        <p>This is closer to how Google Search democratized information. You didn't need to know how to use a library card catalog to find obscure facts. But you still had to know what you were looking for. The AI agents going mainstream now are different: they help you figure out what to look for in the first place.</p>
+
+        <h3>The Honest Gap</h3>
+
+        <p>It's worth being clear about what these tools can't do.</p>
+
+        <p>Sellers in the MIT Technology Review piece noted that the AI is strongest on product ideation and sourcing, weakest on marketing and advertising. One seller said the recommendations can be generic, that you still need to push back on what it suggests. Another expert raised concerns about transparency: when AI agents start making purchasing decisions autonomously, how do we know whose interest they're optimizing for?</p>
+
+        <p>These aren't reasons to dismiss the tools. They're reasons to understand their limits.</p>
+
+        <p>The skill that remains irreplaceable is judgment. McClary had to decide whether to trust the $2.50 cost estimate, whether the factory was reliable, whether the design changes were worth it. The AI informed those decisions. It didn't make them.</p>
+
+        <p>This is the pattern that keeps showing up. AI handles information. Humans handle meaning. AI finds the gap in your plan. You decide whether the gap is worth closing.</p>
+
+        <h3>What This Means For Anyone Building Things</h3>
+
+        <p>If you're working on a product, a brand, or a business, the AI opportunity isn't just in automating tasks your team already does. It's in automating the decisions that stopped people from starting in the first place.</p>
+
+        <p>Before, you had to know what you were doing before you could find out if you could do it. Now the question comes first, and the system helps you answer it.</p>
+
+        <p>The next wave of useful AI tools won't make existing workflows faster. They'll make new workflows possible for people who wouldn't have known where to start.</p>
+
+        <p><em>If you found this useful, follow for more breakdowns on technology and small business.</em></p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 bnwraptor</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = next === 'dark' ? '☀️ Light' : '🌙 Dark';
+      localStorage.setItem('theme', next);
+    }
+
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.querySelector('.theme-toggle').textContent = saved === 'dark' ? '☀️ Light' : '🌙 Dark';
+    }
+  </script>
+</body>
+</html>
