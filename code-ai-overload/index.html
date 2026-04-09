@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="/favicon-black.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The AI coding promise isn't delivering the productivity gains developers expected. Here's what the data actually shows.">
+  <title>The AI Code Overload Problem: Why More Code Isn't More Productivity - bnwraptor</title>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-V45PK6W060"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-V45PK6W060');
+  </script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --accent: #0066cc;
+      --card-bg: #f8f9fa;
+      --border: #e1e4e8;
+      --muted: #6a737d;
+    }
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    header h1 a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: opacity 0.2s;
+    }
+    .back-button:hover { opacity: 0.7; }
+    .article {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .article h2 {
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+    .article-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .article-content { color: var(--text); }
+    .article-content p { margin-bottom: 16px; }
+    .article-content strong { color: var(--accent); }
+    .article-content h3 {
+      margin-top: 28px;
+      margin-bottom: 12px;
+      font-size: 1.3rem;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+    @media (max-width: 600px) {
+      body { padding: 15px; }
+      .article { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <img src="/raptor-black.png" alt="bnwraptor logo" style="height:40px;width:40px;vertical-align:middle;margin-right:8px;border-radius:50%;object-fit:cover;">
+      <a href="/">bnwraptor</a>
+    </h1>
+    <button class="theme-toggle" onclick="toggleTheme()">Dark</button>
+  </header>
+  <a href="/" class="back-button">Back to posts</a>
+  <article class="article">
+    <h2>The AI Code Overload Problem: Why More Code Isn't More Productivity</h2>
+    <p class="article-date">April 9, 2026</p>
+    <div class="article-content">
+      <p>A financial services company did something unusual not long ago. They gave their developers access to Cursor, an AI coding tool, and watched what happened. The results were immediate. Code started flowing faster than anyone had seen before. Features that used to take days were getting shipped in hours. Managers circled back and asked the obvious question: how much faster are we going now?</p>
+
+      <p>The answer, according to new research, is more complicated than the demos suggest.</p>
+
+      <p>A large-scale empirical study tracking AI-generated code in production systems found that AI-introduced issues in live codebases crossed 110,000 by February 2026 and have continued climbing. An analysis from CodeBridge put real numbers to what many developers have been quietly complaining about: companies adopting AI coding tools in the first year actually pay 12% more in total development costs than they did before, once you account for code review overhead, defect rates, and the churn from constantly rewriting AI-generated code that looked right but wasn't. Another estimate puts the quality deficit in AI-assisted code at 40%, meaning two in every five AI-suggested changes go into production without adequate human scrutiny.</p>
+
+      <p>Meanwhile, developers feel productive. They ship more. They close more tickets. They generate more code. But the code they're generating is creating a maintenance burden that nobody on the team signed up for, and nobody is measuring.</p>
+
+      <p>Welcome to the AI code overload problem.</p>
+
+      <h3>The Feeling of Speed</h3>
+
+      <p>The dirty secret of AI coding tools is that they optimize for the feeling of progress, not actual productivity. When a developer uses Cursor or GitHub Copilot to generate a function in seconds that used to take an hour, everyone celebrates. The ticket is closed. The velocity chart goes up. The sprint looks successful.</p>
+
+      <p>What doesn't show up on the chart: the code reviewer who now needs to understand an AI-generated function they didn't write and can't assume is correct. The QA engineer who runs the same test suite three times because AI keeps suggesting plausible-but-wrong implementations. The senior dev who gets pulled in to debug the AI slop that made it through to staging.</p>
+
+      <p>Research from Exceeds AI found that developers using AI coding assistants report feeling 20% faster. Their actual throughput, when measured against completed and stable features, is closer to 19% slower once you factor in rework and defect correction. The feeling of speed is real. The accounting is just deferred.</p>
+
+      <p>The numbers cut differently depending on how you measure. Shipped features: up. Code review time: up. Bug reports from production: up. Time to understand someone else's implementation: up. Confidence in the codebase: down.</p>
+
+      <h3>What 110,000 Issues Actually Looks Like</h3>
+
+      <p>The Arxiv study tracking AI-generated code in the wild is worth unpacking. These aren't hypothetical problems. They're real defects that made it into real production systems. Security issues, logic errors, API misuse, race conditions. Things that compiled cleanly and passed unit tests and caused incidents at 2am.</p>
+
+      <p>The study tracked what happens when AI-generated snippets get merged into production codebases over time. The pattern is consistent: early adoption looks great. Velocity climbs. Then the debt starts compounding. The issues accumulate faster than teams can address them. By the time organizations realize they're in trouble, they're already spending more time triaging AI-generated problems than they saved in the original generation.</p>
+
+      <p>The math sounds abstract until you're living it. Your team shipped 40% more features last quarter. Your incident count is also up 40%. Your senior developers are spending half their day explaining AI-generated code to mid-level engineers who didn't write it and can't debug it without hand-holding.</p>
+
+      <p>Code review becomes a different kind of work. You can't just read the diff anymore. You have to understand what the AI was trying to do, whether its approach makes sense, whether the edge cases it hand-waved are actually handled. That takes longer than writing the code yourself would have taken.</p>
+
+      <h3>The Quality Deficit Nobody Audits</h3>
+
+      <p>Traditional static analysis tools catch a certain class of problems. They don't catch AI-specific issues because those issues didn't exist before AI-generated code existed. A function that uses an API correctly but in a way that violates an undocumented assumption, a library call that works in staging but surprises in production, a SQL query that's correct but catastrophic at scale. These are the kinds of problems that don't trigger a linter.</p>
+
+      <p>The DEV Community wrote up a practical guide to auditing AI code debt that is worth reading if you're managing a team that uses these tools. Their core argument: there's an entire category of technical debt that has no tooling to detect it and no established process to track it. You don't know how much bad AI code is in your system until it breaks something.</p>
+
+      <p>Forbes ran a piece on cleaning code before adding more, which sounds obvious but is increasingly urgent in an AI-assisted world. Their specific concern: AI suggestions that work in isolation but create architectural problems across a codebase. A function that solves today's ticket cleanly while introducing dependencies that will make tomorrow's ticket harder. Short-term convenience, long-term slowdown.</p>
+
+      <h3>The Developers Living It</h3>
+
+      <p>Talk to developers who use AI coding tools daily and you'll hear a consistent theme: the tools are genuinely useful for boilerplate, for scaffolding, for unfamiliar APIs. If you're working with a library you've never seen and you need a usage example, AI generates something reasonable to start from. If you're writing CRUD operations for the fifth time this month, AI handles the tedium.</p>
+
+      <p>The friction comes when the tool is asked to solve something novel, or when it confidently suggests the wrong approach, or when it produces something that works but for reasons nobody on the team understands. The confidence is the issue. A wrong answer from a junior developer raises eyebrows. A wrong answer from an AI feels like it must be right because the model wouldn't make that kind of basic mistake. Except it does.</p>
+
+      <p>The more people use these tools without understanding what they're doing, the more the knowledge gap compounds. The team ships faster but learns slower. New engineers onboarding into an AI-heavy codebase have fewer opportunities to develop genuine understanding because the AI is handling the learning surface area for them. When the AI is wrong, nobody has the context to catch it.</p>
+
+      <h3>The Way Out</h3>
+
+      <p>The organizations figuring this out are the ones treating AI-generated code as a first-class auditing concern. That means code review processes that assume AI-generated code needs more scrutiny, not less. It means tracking defect rates by whether AI assisted in the generation. It means accepting that velocity in the ticket system is not the same as productive output.</p>
+
+      <p>It also means being honest about where AI coding tools actually help versus where they create work. Boilerplate: help. Scaffolding: help. Novel logic in domain areas: slow down and verify. Production incidents caused by AI-suggested shortcuts: track and fix.</p>
+
+      <p>For individual developers, the skill that matters more than knowing how to prompt an AI to generate code is knowing how to audit code you didn't write. Reading code well, understanding what it does before accepting it, debugging without debugger traces, reasoning about edge cases in AI-generated logic. These are the unglamorous skills that AI makes less practiced at precisely the moment they become more valuable.</p>
+
+      <p>The code overload problem isn't going to slow down. The tools are getting better and the adoption is accelerating. The organizations that figure out how to measure the real cost, not just the sprint velocity, will be the ones who actually come out ahead.</p>
+
+      <p>Everyone else will just have a lot more code.</p>
+
+      <p><em>Follow for more breakdowns on technology and small business.</em></p>
+    </div>
+  </article>
+  <footer>
+    <p>2026 bnwraptor</p>
+  </footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = next === 'dark' ? 'Light' : 'Dark';
+      localStorage.setItem('theme', next);
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.querySelector('.theme-toggle').textContent = saved === 'dark' ? 'Light' : 'Dark';
+    }
+  </script>
+</body>
+</html>
