@@ -1,0 +1,73 @@
+# You're Using OpenClaw as a Chatbot. Your Code Deserves a Review Team
+
+Most people use OpenClaw the same way they use Google. Ask a question, get an answer, move on. That works fine for simple tasks. But if you're building software with OpenClaw, you're leaving the most powerful capability on the table: coordinated agent teams that review each other's work.
+
+Here's what that looks like in practice, and why it changes everything about how you should be thinking about AI-assisted development.
+
+## The Problem Nobody Talks About
+
+Every team using AI coding tools faces the same quiet crisis. The tools ship code fast. Review cycles slow down. The gap between generation and validation keeps growing. A single AI agent produces what used to take a developer a full day. The problem is that the agent doesn't stop to consider alternatives, edge cases, or whether this approach will create debt six months from now.
+
+This isn't unique to OpenClaw. It's a pattern across every AI coding tool. Cursor, Copilot, any LLM touch in the pipeline. Speed wins on generation. Review infrastructure hasn't caught up.
+
+OpenClaw sessions process. Sessions spawn agents. Agents create sessions. The orchestration layer exists. What teams don't have is a process for making agents check each other's work.
+
+## The Agent Parliament
+
+Picture this: you have three agents running in parallel, each writing a solution to the same problem. None of them know what the others are doing. They just produce output. Then two more agents read all three outputs, vote independently, surface concerns, score the work on specific criteria. One wins by consensus.
+
+That's the adversarial review pipeline. It's not theory. It's how security teams think about red teams, how ML researchers think about ensemble methods, how competent engineering teams think about design docs. Multiple perspectives, independent evaluation, consensus or scoring. Then the human picks the winner.
+
+The question is whether OpenClaw can run this today. The answer is yes, with the right orchestration. Sessions spawn as independent processes. Agents produce outputs. Evaluators aggregate votes. The gap is the glue code between steps. That's where agent teams live.
+
+## What Changes With Review Teams
+
+When you run an adversarial pipeline, the problems shift. Instead of "did the agent produce code," you ask "did the agent produce code that another agent agrees is correct."
+
+The question sounds simple. The answer unlocks several things at once. Code that two or three agents independently verify is more robust than code that one agent produced. Confidence comes from consensus, not from a single model vote.
+
+You also get something unexpected: the agents teach each other without a shared context. When evaluator agents flag issues, they explain why. The generator learns from the review. The human reviews the reasoning, not just the output.
+
+## The Architecture That Exists Today
+
+OpenClaw sessions are isolated. Agents run independently. There is no shared memory between sessions, which sounds like a limitation until you realize this is exactly what you want for adversarial review. Independent judges who can't collude.
+
+What you need is a controller session that orchestrates the pipeline. It reads the task, splits it, dispatches generator sessions, collects outputs, dispatches evaluator sessions, tallies votes, presents the winner.
+
+The workflow looks like this:
+
+```
+human → controller → generator agents → evaluator agents → vote aggregation → human approval
+```
+
+No session shares context with another. Evaluators see only the outputs. Controller only sees aggregates. Nobody reads the full pipeline unless the human asks for it.
+
+## Where the Leverage Is
+
+The leverage is in the evaluator pool, not the generator pool. More evaluators means more independent checks. More generators means more candidates. The sweet spot for most tasks is three generators, two evaluators. Five generators, three evaluators for high-stakes decisions.
+
+OpenClaw sessions run isolated, which means evaluation can be harsh without political overhead. A skeptical evaluator agent that flags architectural concerns is just doing its job. A generator that gets flagged twice and revised twice is normal workflow, not a problem to escalate.
+
+The human sets the rubric. The agents apply it. The rubric can be explicit: performance, correctness, style. The rubric can be implicit: no unnecessary dependencies, test coverage, readability. Either way, the scoring stays consistent because the criteria are baked into the prompt, not the relationship.
+
+## The Honest Limitation
+
+This isn't free. Running five sessions and three evaluations costs inference. The math favors features where correctness matters over features where speed is the only metric. A login form doesn't need adversarial review. A payment integration does. A config migration does. An AI feature hitting production does.
+
+The pipeline also requires a human to set the initial task, confirm the rubric, accept the winner. Some decisions need human judgment. The pipeline handles the work. Humans handle the "is this the right work" question.
+
+## What Opens Up When You Think This Way
+
+Once you're running agent teams, a few patterns become obvious. Evaluator agents can flag when generator outputs are too similar. They can flag when a solution introduces dependencies without the human asking. They can catch gaps the human sees but didn't verbalize. The pipeline surfaces issues before commit, not after.
+
+Code review stops being a bottleneck and starts being a structured gate. The gate has criteria. Multiple agents apply the same criteria. Confidence comes from repetition.
+
+Your codebase gets cleaner not because one AI agent is smart, but because several agents checked the same work from different angles. The diversity is the feature.
+
+The bottleneck shifts from generation to evaluation. That is a better problem to have.
+
+---
+
+If you're using OpenClaw for code and running single-agent sessions, you're using a fraction of the platform. Agent teams with adversarial review exist today. The question is whether you design for it.
+
+---
