@@ -1,73 +1,211 @@
-# You're Using OpenClaw as a Chatbot. Your Code Deserves a Review Team
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="/favicon-black.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>You're Using OpenClaw as a Chatbot. Your Code Deserves a Review Team - bnwraptor</title>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --accent: #0066cc;
+      --card-bg: #f8f9fa;
+      --border: #e1e4e8;
+      --muted: #6a737d;
+    }
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --accent: #58a6ff;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+    header h1 a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .theme-toggle {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .theme-toggle:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 24px;
+      transition: opacity 0.2s;
+    }
+    .back-button:hover { opacity: 0.7; }
+    .article {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .article h2 {
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+      line-height: 1.3;
+    }
+    .article-date {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 24px;
+    }
+    .article-content { color: var(--text); }
+    .article-content p { margin-bottom: 16px; }
+    .article-content strong { color: var(--accent); }
+    .article-content h3 {
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+    @media (max-width: 600px) {
+      body { padding: 15px; }
+      .article { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <img src="/raptor-black.png" alt="bnwraptor" style="height:40px;width:40px;vertical-align:middle;margin-right:8px;border-radius:50%;object-fit:cover;">
+      <a href="/">bnwraptor</a>
+    </h1>
+    <button class="theme-toggle" onclick="toggleTheme()">Dark</button>
+  </header>
+  <a href="/" class="back-button">Back to posts</a>
+  <article class="article">
+    <h2>You're Using OpenClaw as a Chatbot. Your Code Deserves a Review Team</h2>
+    <p class="article-date">April 10, 2026</p>
+    <div class="article-content">
+      <p>Most people use OpenClaw the same way they use Google. Ask a question, get an answer, move on. That works fine for simple tasks. But if you're building software with OpenClaw, you're leaving the most powerful capability on the table: coordinated agent teams that review each other's work.</p>
 
-Most people use OpenClaw the same way they use Google. Ask a question, get an answer, move on. That works fine for simple tasks. But if you're building software with OpenClaw, you're leaving the most powerful capability on the table: coordinated agent teams that review each other's work.
+      <h3>The Problem Nobody Talks About</h3>
 
-Here's what that looks like in practice, and why it changes everything about how you should be thinking about AI-assisted development.
+      <p>Every team using AI coding tools faces the same quiet crisis. The tools ship code fast. Review cycles slow down. The gap between generation and validation keeps growing. A single AI agent produces what used to take a developer a full day. The problem is that the agent doesn't stop to consider alternatives, edge cases, or whether this approach will create debt six months from now.</p>
 
-## The Problem Nobody Talks About
+      <p>This isn't unique to OpenClaw. It's a pattern across every AI coding tool. Cursor, Copilot, any LLM touch in the pipeline. Speed wins on generation. Review infrastructure hasn't caught up.</p>
 
-Every team using AI coding tools faces the same quiet crisis. The tools ship code fast. Review cycles slow down. The gap between generation and validation keeps growing. A single AI agent produces what used to take a developer a full day. The problem is that the agent doesn't stop to consider alternatives, edge cases, or whether this approach will create debt six months from now.
+      <p>OpenClaw sessions process. Sessions spawn agents. Agents create sessions. The orchestration layer exists. What teams don't have is a process for making agents check each other's work.</p>
 
-This isn't unique to OpenClaw. It's a pattern across every AI coding tool. Cursor, Copilot, any LLM touch in the pipeline. Speed wins on generation. Review infrastructure hasn't caught up.
+      <h3>The Agent Parliament</h3>
 
-OpenClaw sessions process. Sessions spawn agents. Agents create sessions. The orchestration layer exists. What teams don't have is a process for making agents check each other's work.
+      <p>Picture this: three agents running in parallel, each writing a solution to the same problem. None of them know what the others are doing. They just produce output. Then two more agents read all three outputs, vote independently, surface concerns, score the work on specific criteria. One wins by consensus.</p>
 
-## The Agent Parliament
+      <p>That's the adversarial review pipeline. It's not theory. It's how security teams think about red teams, how ML researchers think about ensemble methods, how competent engineering teams think about design docs. Multiple perspectives, independent evaluation, consensus or scoring. Then the human picks the winner.</p>
 
-Picture this: you have three agents running in parallel, each writing a solution to the same problem. None of them know what the others are doing. They just produce output. Then two more agents read all three outputs, vote independently, surface concerns, score the work on specific criteria. One wins by consensus.
+      <p>The question is whether OpenClaw can run this today. The answer is yes, with the right orchestration. Sessions spawn as independent processes. Evaluators aggregate votes. The gap is the glue code between steps. That's where agent teams live.</p>
 
-That's the adversarial review pipeline. It's not theory. It's how security teams think about red teams, how ML researchers think about ensemble methods, how competent engineering teams think about design docs. Multiple perspectives, independent evaluation, consensus or scoring. Then the human picks the winner.
+      <h3>What Changes With Review Teams</h3>
 
-The question is whether OpenClaw can run this today. The answer is yes, with the right orchestration. Sessions spawn as independent processes. Agents produce outputs. Evaluators aggregate votes. The gap is the glue code between steps. That's where agent teams live.
+      <p>When you run an adversarial pipeline, the problems shift. Instead of "did the agent produce code," you ask "did the agent produce code that another agent agrees is correct?"</p>
 
-## What Changes With Review Teams
+      <p>Code that two or three agents independently verify is more robust than code that one agent produced. Confidence comes from consensus, not a single model vote.</p>
 
-When you run an adversarial pipeline, the problems shift. Instead of "did the agent produce code," you ask "did the agent produce code that another agent agrees is correct."
+      <p>You also get something unexpected: agents teach each other without a shared context. When evaluator agents flag issues, they explain why. The generator learns from the review. The human reviews the reasoning, not just the output.</p>
 
-The question sounds simple. The answer unlocks several things at once. Code that two or three agents independently verify is more robust than code that one agent produced. Confidence comes from consensus, not from a single model vote.
+      <h3>The Architecture That Exists Today</h3>
 
-You also get something unexpected: the agents teach each other without a shared context. When evaluator agents flag issues, they explain why. The generator learns from the review. The human reviews the reasoning, not just the output.
+      <p>OpenClaw sessions are isolated. Agents run independently. There is no shared memory between sessions, which sounds like a limitation until you realize this is exactly what you want for adversarial review. Independent judges who can't collude.</p>
 
-## The Architecture That Exists Today
+      <p>What you need is a controller session that orchestrates the pipeline. It reads the task, splits it, dispatches generator sessions, collects outputs, dispatches evaluator sessions, tallies votes, presents the winner.</p>
 
-OpenClaw sessions are isolated. Agents run independently. There is no shared memory between sessions, which sounds like a limitation until you realize this is exactly what you want for adversarial review. Independent judges who can't collude.
+      <p>The workflow:</p>
 
-What you need is a controller session that orchestrates the pipeline. It reads the task, splits it, dispatches generator sessions, collects outputs, dispatches evaluator sessions, tallies votes, presents the winner.
+      <p><strong>human</strong> controller generator agents evaluator agents vote aggregation human approval</p>
 
-The workflow looks like this:
+      <p>No session shares context with another. Evaluators see only the outputs. Controller only sees aggregates. Nobody reads the full pipeline unless the human asks for it.</p>
 
-```
-human → controller → generator agents → evaluator agents → vote aggregation → human approval
-```
+      <h3>Where the Leverage Is</h3>
 
-No session shares context with another. Evaluators see only the outputs. Controller only sees aggregates. Nobody reads the full pipeline unless the human asks for it.
+      <p>The leverage is in the evaluator pool, not the generator pool. More evaluators means more independent checks. More generators means more candidates. The sweet spot for most tasks is three generators, two evaluators. Five generators, three evaluators for high-stakes decisions.</p>
 
-## Where the Leverage Is
+      <p>OpenClaw sessions run isolated, which means evaluation can be harsh without political overhead. A skeptical evaluator agent that flags architectural concerns is just doing its job. A generator that gets flagged twice and revised twice is normal workflow, not a problem to escalate.</p>
 
-The leverage is in the evaluator pool, not the generator pool. More evaluators means more independent checks. More generators means more candidates. The sweet spot for most tasks is three generators, two evaluators. Five generators, three evaluators for high-stakes decisions.
+      <h3>The Honest Limitation</h3>
 
-OpenClaw sessions run isolated, which means evaluation can be harsh without political overhead. A skeptical evaluator agent that flags architectural concerns is just doing its job. A generator that gets flagged twice and revised twice is normal workflow, not a problem to escalate.
+      <p>This isn't free. Running five sessions and three evaluations costs inference. The math favors features where correctness matters over features where speed is the only metric. A login form doesn't need adversarial review. A payment integration does. A config migration does. An AI feature hitting production does.</p>
 
-The human sets the rubric. The agents apply it. The rubric can be explicit: performance, correctness, style. The rubric can be implicit: no unnecessary dependencies, test coverage, readability. Either way, the scoring stays consistent because the criteria are baked into the prompt, not the relationship.
+      <p>The pipeline also requires a human to set the initial task, confirm the rubric, accept the winner. Some decisions need human judgment. The pipeline handles the work. Humans handle "is this the right work" questions.</p>
 
-## The Honest Limitation
+      <h3>What Opens Up When You Think This Way</h3>
 
-This isn't free. Running five sessions and three evaluations costs inference. The math favors features where correctness matters over features where speed is the only metric. A login form doesn't need adversarial review. A payment integration does. A config migration does. An AI feature hitting production does.
+      <p>Once you're running agent teams, a few patterns become obvious. Evaluator agents flag when generator outputs are too similar. They flag when a solution introduces dependencies without the human asking. They catch gaps before commit, not after.</p>
 
-The pipeline also requires a human to set the initial task, confirm the rubric, accept the winner. Some decisions need human judgment. The pipeline handles the work. Humans handle the "is this the right work" question.
+      <p>Code review stops being a bottleneck and starts being a structured gate. The gate has criteria. Multiple agents apply the same criteria. Confidence comes from repetition.</p>
 
-## What Opens Up When You Think This Way
+      <p>Your codebase gets cleaner not because one AI agent is smart, but because several agents checked the same work from different angles. The diversity is the feature.</p>
 
-Once you're running agent teams, a few patterns become obvious. Evaluator agents can flag when generator outputs are too similar. They can flag when a solution introduces dependencies without the human asking. They can catch gaps the human sees but didn't verbalize. The pipeline surfaces issues before commit, not after.
+      <p>The bottleneck shifts from generation to evaluation. That is a better problem to have.</p>
 
-Code review stops being a bottleneck and starts being a structured gate. The gate has criteria. Multiple agents apply the same criteria. Confidence comes from repetition.
+      <p>If you're using OpenClaw for code and running single-agent sessions, you're using a fraction of the platform. Agent teams with adversarial review exist today. The question is whether you design for it.</p>
 
-Your codebase gets cleaner not because one AI agent is smart, but because several agents checked the same work from different angles. The diversity is the feature.
-
-The bottleneck shifts from generation to evaluation. That is a better problem to have.
-
----
-
-If you're using OpenClaw for code and running single-agent sessions, you're using a fraction of the platform. Agent teams with adversarial review exist today. The question is whether you design for it.
-
----
+      <p><em>Follow for more on OpenClaw workflows and agent orchestration.</em></p>
+    </div>
+  </article>
+  <footer>
+    <p>2026 bnwraptor</p>
+  </footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      const btn = document.querySelector('.theme-toggle');
+      btn.textContent = next === 'dark' ? 'Light' : 'Dark';
+      localStorage.setItem('theme', next);
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.querySelector('.theme-toggle').textContent = saved === 'dark' ? 'Light' : 'Dark';
+    }
+  </script>
+</body>
+</html>
