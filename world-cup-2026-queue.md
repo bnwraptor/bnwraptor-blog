@@ -54,7 +54,7 @@
 
 ## Status
 - [x] List compiled
-- [ ] Article: Algeria
+- [x] Article: Algeria (published April 15, 2026)
 - [ ] Article: Argentina
 - [ ] Article: Australia
 - [ ] Article: Austria
