@@ -1,113 +1,144 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
   <defs>
     <linearGradient id="pitchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#2d7a3e"/>
-      <stop offset="50%" style="stop-color:#3a8f4a"/>
-      <stop offset="100%" style="stop-color:#2d7a3e"/>
+      <stop offset="0%" style="stop-color:#3a8f4a"/>
+      <stop offset="50%" style="stop-color:#4a9f5a"/>
+      <stop offset="100%" style="stop-color:#3a8f4a"/>
     </linearGradient>
-    <pattern id="stripes" width="30" height="400" patternUnits="userSpaceOnUse">
-      <rect width="15" height="400" fill="#2d7a3e"/>
-      <rect x="15" width="15" height="400" fill="#348a45"/>
-    </pattern>
   </defs>
 
-  <!-- Main pitch -->
-  <rect x="0" y="0" width="600" height="400" fill="url(#pitchGrad)"/>
-  <rect x="0" y="0" width="600" height="400" fill="url(#stripes)" opacity="0.15"/>
+  <!-- Pitch background -->
+  <rect width="600" height="400" fill="url(#pitchGrad)"/>
 
-  <!-- Outer boundary -->
-  <rect x="10" y="10" width="580" height="380" fill="none" stroke="white" stroke-width="2.5" rx="3"/>
+  <!-- Alternating grass stripes -->
+  <rect x="0" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="30" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="60" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="90" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="120" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="150" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="180" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="210" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="240" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="270" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="300" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="330" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="360" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="390" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="420" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="450" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="480" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="510" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="540" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="570" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+  <rect x="600" y="0" width="15" height="400" fill="#359048" opacity="0.3"/>
+
+  <!-- Pitch outline -->
+  <rect x="2" y="2" width="596" height="396" fill="none" stroke="white" stroke-width="2.5"/>
 
   <!-- Centre line -->
-  <line x1="300" y1="10" x2="300" y2="390" stroke="white" stroke-width="2"/>
+  <line x1="300" y1="2" x2="300" y2="398" stroke="white" stroke-width="2"/>
 
   <!-- Centre circle -->
   <circle cx="300" cy="200" r="55" fill="none" stroke="white" stroke-width="2"/>
   <circle cx="300" cy="200" r="3" fill="white"/>
 
-  <!-- Centre penalty areas -->
-  <!-- Left (defending third) -->
-  <rect x="10" y="92" width="110" height="216" fill="none" stroke="white" stroke-width="2"/>
-  <!-- Right (attacking third) -->
-  <rect x="480" y="92" width="110" height="216" fill="none" stroke="white" stroke-width="2"/>
+  <!-- Left penalty area: x=2 to x=112, centred on x=57 -->
+  <rect x="2" y="95" width="110" height="210" fill="none" stroke="white" stroke-width="2"/>
+  <!-- Left goal area: x=2 to x=35 -->
+  <rect x="2" y="145" width="33" height="110" fill="none" stroke="white" stroke-width="2"/>
+  <!-- Left penalty spot at x=57, y=200 -->
+  <circle cx="57" cy="200" r="3" fill="white"/>
+  <!-- Left penalty arc: centre at (57,200), r=8, clipped by penalty area -->
+  <path d="M 57 168 A 32 32 0 0 1 57 232" fill="none" stroke="white" stroke-width="2"/>
 
-  <!-- Goal areas (6-yard box) -->
-  <rect x="10" y="140" width="35" height="120" fill="none" stroke="white" stroke-width="2"/>
-  <rect x="555" y="140" width="35" height="120" fill="none" stroke="white" stroke-width="2"/>
-
-  <!-- Penalty spots -->
-  <circle cx="95" cy="200" r="3" fill="white"/>
-  <circle cx="505" cy="200" r="3" fill="white"/>
-
-  <!-- Penalty arcs -->
-  <path d="M 95 155 A 45 45 0 0 1 95 245" fill="none" stroke="white" stroke-width="2"/>
-  <path d="M 505 155 A 45 45 0 0 0 505 245" fill="none" stroke="white" stroke-width="2"/>
-
-  <!-- Goals (simple rectangles) -->
-  <rect x="0" y="175" width="10" height="50" fill="none" stroke="white" stroke-width="2"/>
-  <rect x="590" y="175" width="10" height="50" fill="none" stroke="white" stroke-width="2"/>
+  <!-- Right penalty area: x=488 to x=598, centred on x=543 -->
+  <rect x="488" y="95" width="110" height="210" fill="none" stroke="white" stroke-width="2"/>
+  <!-- Right goal area: x=565 to x=598 -->
+  <rect x="565" y="145" width="33" height="110" fill="none" stroke="white" stroke-width="2"/>
+  <!-- Right penalty spot at x=543, y=200 -->
+  <circle cx="543" cy="200" r="3" fill="white"/>
+  <!-- Right penalty arc -->
+  <path d="M 543 168 A 32 32 0 0 0 543 232" fill="none" stroke="white" stroke-width="2"/>
 
   <!-- Corner arcs -->
-  <path d="M 10 20 A 8 8 0 0 0 18 10" fill="none" stroke="white" stroke-width="1.5"/>
-  <path d="M 582 10 A 8 8 0 0 0 590 20" fill="none" stroke="white" stroke-width="1.5"/>
-  <path d="M 10 380 A 8 8 0 0 1 18 390" fill="none" stroke="white" stroke-width="1.5"/>
-  <path d="M 582 390 A 8 8 0 0 1 590 380" fill="none" stroke="white" stroke-width="1.5"/>
+  <path d="M 2 12 A 10 10 0 0 0 12 2" fill="none" stroke="white" stroke-width="1.5"/>
+  <path d="M 588 2 A 10 10 0 0 0 598 12" fill="none" stroke="white" stroke-width="1.5"/>
+  <path d="M 2 388 A 10 10 0 0 1 12 398" fill="none" stroke="white" stroke-width="1.5"/>
+  <path d="M 588 398 A 10 10 0 0 1 598 388" fill="none" stroke="white" stroke-width="1.5"/>
 
-  <!-- ===== FORMATION: 4-3-3 (defending LEFT, attacking RIGHT) ===== -->
+  <!-- Goals -->
+  <rect x="-2" y="180" width="6" height="40" fill="none" stroke="white" stroke-width="2"/>
+  <rect x="596" y="180" width="6" height="40" fill="none" stroke="white" stroke-width="2"/>
 
-  <!-- Goalkeeper — bottom left area -->
-  <circle cx="45" cy="340" r="16" fill="#00aa44" stroke="white" stroke-width="2"/>
-  <text x="45" y="344" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Benbot</text>
+  <!-- ===== FORMATION: 4-3-3, ATTACKING UPWARD ===== -->
 
-  <!-- Back 4 — horizontal line near bottom -->
-  <circle cx="120" cy="310" r="16" fill="#0055cc" stroke="white" stroke-width="2"/>
-  <text x="120" y="314" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Mand</text>
+  <!-- GOALKEEPER (green) - centred in goal area, bottom of pitch -->
+  <circle cx="57" cy="335" r="15" fill="#00aa44" stroke="white" stroke-width="2"/>
+  <text x="57" y="339" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Benbot</text>
 
-  <circle cx="190" cy="310" r="16" fill="#0055cc" stroke="white" stroke-width="2"/>
-  <text x="190" y="314" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Tougai</text>
+  <!-- BACK FOUR (blue) - evenly spread across penalty area width -->
+  <!-- Left back -->     cx=25
+  <circle cx="25" cy="285" r="15" fill="#0044cc" stroke="white" stroke-width="2"/>
+  <text x="25" y="289" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Ait-Nouri</text>
 
-  <circle cx="260" cy="310" r="16" fill="#0055cc" stroke="white" stroke-width="2"/>
-  <text x="260" y="314" text-anchor="middle" fill="white" font-size="8" font-family="Arial" font-weight="bold">Bensebaini</text>
+  <!-- Left centre -->  cx=95
+  <circle cx="95" cy="285" r="15" fill="#0044cc" stroke="white" stroke-width="2"/>
+  <text x="95" y="289" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Bensebaini</text>
 
-  <circle cx="330" cy="310" r="16" fill="#0055cc" stroke="white" stroke-width="2"/>
-  <text x="330" y="314" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Ait-Nouri</text>
+  <!-- Right centre --> cx=165
+  <circle cx="165" cy="285" r="15" fill="#0044cc" stroke="white" stroke-width="2"/>
+  <text x="165" y="289" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Tougai</text>
 
-  <!-- Midfield 3 — diagonal midfield line -->
-  <circle cx="160" cy="235" r="16" fill="#ffbb00" stroke="white" stroke-width="2"/>
-  <text x="160" y="239" text-anchor="middle" fill="#1a1a1a" font-size="8" font-family="Arial" font-weight="bold">Bennacer</text>
+  <!-- Right back -->  cx=235
+  <circle cx="235" cy="285" r="15" fill="#0044cc" stroke="white" stroke-width="2"/>
+  <text x="235" y="289" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Mandi</text>
 
-  <circle cx="245" cy="235" r="16" fill="#ffbb00" stroke="white" stroke-width="2"/>
-  <text x="245" y="239" text-anchor="middle" fill="#1a1a1a" font-size="8" font-family="Arial" font-weight="bold">Zerrouki</text>
+  <!-- MIDFIELD THREE (yellow) - diamond/v shape, y=195 -->
+  <!-- Left interior -->  x=65
+  <circle cx="65" cy="195" r="15" fill="#ffcc00" stroke="white" stroke-width="2"/>
+  <text x="65" y="199" text-anchor="middle" fill="#1a1a1a" font-size="9" font-family="Arial" font-weight="bold">Bennacer</text>
 
-  <circle cx="330" cy="235" r="16" fill="#ffbb00" stroke="white" stroke-width="2"/>
-  <text x="330" y="239" text-anchor="middle" fill="#1a1a1a" font-size="8" font-family="Arial" font-weight="bold">Boudaoui</text>
+  <!-- Central mid -->   x=150
+  <circle cx="150" cy="195" r="15" fill="#ffcc00" stroke="white" stroke-width="2"/>
+  <text x="150" y="199" text-anchor="middle" fill="#1a1a1a" font-size="9" font-family="Arial" font-weight="bold">Zerrouki</text>
 
-  <!-- Front 3 — diagonal attacking line -->
-  <circle cx="180" cy="155" r="16" fill="#dd2222" stroke="white" stroke-width="2"/>
-  <text x="180" y="159" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Mahrez</text>
+  <!-- Right interior --> x=235
+  <circle cx="235" cy="195" r="15" fill="#ffcc00" stroke="white" stroke-width="2"/>
+  <text x="235" y="199" text-anchor="middle" fill="#1a1a1a" font-size="9" font-family="Arial" font-weight="bold">Boudaoui</text>
 
-  <circle cx="265" cy="155" r="16" fill="#dd2222" stroke="white" stroke-width="2"/>
-  <text x="265" y="159" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Amoura</text>
+  <!-- ATTACKING THREE (red) - wide front line, y=105 -->
+  <!-- Left winger -->  x=57
+  <circle cx="57" cy="105" r="15" fill="#cc0000" stroke="white" stroke-width="2"/>
+  <text x="57" y="109" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Mahrez</text>
 
-  <circle cx="350" cy="155" r="16" fill="#dd2222" stroke="white" stroke-width="2"/>
-  <text x="350" y="159" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Gouiri</text>
+  <!-- Centre forward --> x=150
+  <circle cx="150" cy="105" r="15" fill="#cc0000" stroke="white" stroke-width="2"/>
+  <text x="150" y="109" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Amoura</text>
+
+  <!-- Right winger --> x=243
+  <circle cx="243" cy="105" r="15" fill="#cc0000" stroke="white" stroke-width="2"/>
+  <text x="243" y="109" text-anchor="middle" fill="white" font-size="9" font-family="Arial" font-weight="bold">Gouiri</text>
 
   <!-- Attacking direction arrow -->
-  <line x1="400" y1="200" x2="560" y2="200" stroke="white" stroke-width="2" stroke-dasharray="6,4" opacity="0.6"/>
-  <polygon points="560,195 572,200 560,205" fill="white" opacity="0.7"/>
-  <text x="485" y="193" text-anchor="middle" fill="white" font-size="9" font-family="Arial" opacity="0.7">ATTACKING</text>
+  <line x1="300" y1="350" x2="300" y2="50" stroke="white" stroke-width="2.5" stroke-dasharray="8,5" opacity="0.5"/>
+  <polygon points="300,42 294,55 306,55" fill="white" opacity="0.6"/>
+  <text x="310" y="60" fill="white" font-size="9" font-family="Arial" opacity="0.7">ATTACK</text>
 
-  <!-- Legend -->
-  <rect x="395" y="290" width="195" height="95" fill="#111111" rx="4" opacity="0.75"/>
-  <text x="492" y="308" text-anchor="middle" fill="white" font-size="10" font-family="Arial" font-weight="bold">4-3-3 Formation</text>
-  <circle cx="415" cy="325" r="8" fill="#00aa44" stroke="white" stroke-width="1"/>
-  <text x="430" y="329" fill="white" font-size="9" font-family="Arial">Goalkeeper</text>
-  <circle cx="415" cy="345" r="8" fill="#0055cc" stroke="white" stroke-width="1"/>
-  <text x="430" y="349" fill="white" font-size="9" font-family="Arial">Defenders</text>
-  <circle cx="415" cy="365" r="8" fill="#ffbb00" stroke="white" stroke-width="1"/>
-  <text x="430" y="369" fill="white" font-size="9" font-family="Arial">Midfielders</text>
-  <circle cx="540" cy="325" r="8" fill="#dd2222" stroke="white" stroke-width="1"/>
-  <text x="555" y="329" fill="white" font-size="9" font-family="Arial">Forwards</text>
-  <text x="492" y="345" text-anchor="middle" fill="#cccccc" font-size="9" font-family="Arial">Petkovic's Algeria</text>
-  <text x="492" y="360" text-anchor="middle" fill="#cccccc" font-size="9" font-family="Arial">Group D, World Cup 2026</text>
+  <!-- Legend box - bottom right -->
+  <rect x="380" y="280" width="210" height="110" fill="#111111" rx="5" opacity="0.8"/>
+  <text x="485" y="300" text-anchor="middle" fill="white" font-size="11" font-family="Arial" font-weight="bold">Algeria 4-3-3</text>
+  <text x="485" y="315" text-anchor="middle" fill="#aaaaaa" font-size="9" font-family="Arial">Petkovic - World Cup 2026</text>
+
+  <circle cx="400" cy="332" r="7" fill="#00aa44" stroke="white" stroke-width="1"/>
+  <text x="415" y="336" fill="white" font-size="9" font-family="Arial">Goalkeeper</text>
+
+  <circle cx="400" cy="350" r="7" fill="#0044cc" stroke="white" stroke-width="1"/>
+  <text x="415" y="354" fill="white" font-size="9" font-family="Arial">Defenders</text>
+
+  <circle cx="510" cy="332" r="7" fill="#ffcc00" stroke="white" stroke-width="1"/>
+  <text x="525" y="336" fill="white" font-size="9" font-family="Arial">Midfielders</text>
+
+  <circle cx="510" cy="350" r="7" fill="#cc0000" stroke="white" stroke-width="1"/>
+  <text x="525" y="354" fill="white" font-size="9" font-family="Arial">Forwards</text>
 </svg>
